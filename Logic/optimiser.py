@@ -4,4 +4,10 @@ from scipy.optimize import minimize
 
 
 def cost_function(weights, rates, values):
-    return weights * values * rates * np.e ** rates
+    """
+    :param weights: Weights inputted from the optimiser
+    :param rates: annualised interest rates
+    :param values: current outstanding balance
+    :return:
+    """
+    return np.sum(weights * values * rates * np.e ** rates)
